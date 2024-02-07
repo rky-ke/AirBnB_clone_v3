@@ -16,11 +16,17 @@ app.register_blueprint(app_views)
 
 @app.teardown_appcontext
 def teardown(exception):
+    '''
+    close query after each session
+    '''
     storage.close()
 
 # Error handler for 404 Not Found
 @app.errorhandler(404)
 def not_found_error(error):
+    '''
+    return JSON formatted 404 status code response
+    '''
     return jsonify({"error": "Not found"}), 404
 
 if __name__ == "__main__":
