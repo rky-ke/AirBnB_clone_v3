@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+Create an endpoint that retrieves the number of each objects by type:
+"""
 from api.v1.views import app_views
 from flask import jsonify
 from models import storage
